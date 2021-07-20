@@ -2,7 +2,7 @@ let editor;
 
 window.onload = function() {
     editor = ace.edit("editor");
-    editor.setTheme("ace/theme/terminal");
+    editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/c_cpp");
 }
 
@@ -18,18 +18,14 @@ function executeCode() {
 
     $.ajax({
 
-        // url: "/ide/app/compiler.php",
-        // url: "IDE\compiler.py",
-        url: "IDE\views.py",
-        //url: "IDE\compiler.php",
-        
-        
-
-        method: "POST",
+        url: "/excecuteCode",
+        method: "GET",
 
         data: {
             language: $("#languages").val(),
-            code: editor.getSession().getValue()
+            code: editor.getSession().getValue(),
+            csrfViewMiddleware:$('input[name=csrfmiddlewaretoken').val(),
+ 
         },
 
         success: function(response) {

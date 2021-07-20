@@ -19,9 +19,12 @@ from django.urls import path
 from django.urls.conf import include
 import IDE
 from IDE import urls
+from IDE.views import *
+
 
 urlpatterns = [
     path('',include('IDE.urls')),
     path('home',include('IDE.urls')),
     path('admin/', admin.site.urls),
+    path('excecuteCode',executeCode)
 ]

@@ -1,6 +1,6 @@
 from django.db import models
 
-
+# Create your models here.
 class Questions(models.Model):
     _id = models.AutoField(primary_key=True)
     question = models.CharField(max_length=120)

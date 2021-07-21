@@ -3,20 +3,40 @@
 
 
 .header {
-    background: #57a958;
+    background: #262626;
+    text-align: left;
+    font-size: 30px;
+    /* font-weight: bold; */
+    color: white;
+    padding: 15px;
+    font-family: sans-serif;
+    height: 40px;
+}
+
+.problem{
+    background: #9edad5;
     text-align: left;
     font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 4px;
+    color: #205550;
+    padding: 15px;
     font-family: sans-serif;
+    height: 30px;
+}
+
+.dropdown{
+    font-size:16px;
+    height: 30px;
+    width: 150px;
+    background: #9edad5;
 }
 
 .control-panel {
-    background: lightgray;
-    text-align: right;
+
+    background: #262626;
+    text-align: left;
     padding: 4px;
     font-family: sans-serif;
+    height:800px;
 }
 
 .languages {
@@ -24,15 +44,15 @@
     border: 1px solid gray;
 }
 
-#editor { height: 400px; }
+#editor { height: 500px; }
 
 .button-container {
-    text-align: right;
+    text-align: center;
     padding: 4px;
 }
 
 .btn {
-    background: #57a958;
+    background: #eb823d;
     color: white;
     padding: 8px;
     border: 0;

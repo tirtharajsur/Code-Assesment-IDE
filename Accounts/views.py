@@ -18,7 +18,7 @@ def register(request):
                 messages.info(request,'Warning!Username already taken!')
                 return redirect('register')
             elif User.objects.filter(email=email).exists():
-                messages.info(request,'Warning!Email already registered with other username!')
+                messages.info(request,'Warning! Email already registered with other username!')
                 return redirect('register')
             else:
                 user = User.objects.create_user(first_name=first_name,last_name=last_name,username=username,password=password,email=email)
@@ -26,7 +26,7 @@ def register(request):
                 messages.info(request,'Success! You are Registered.')
             return redirect('register')
         else:
-            messages.info(request,'Warning!Password not matching!')
+            messages.info(request,'Warning! Password not matching!')
         return redirect('register')
                 
     else:
@@ -35,7 +35,22 @@ def register(request):
     
     
 def login(request):
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        username = request.POST.get('usernameLogin')
+        password = request.POST.get('passwordLogin')
+        
+        user = auth.authenticate(username=username, password=password)
+        
+        if user is not None:
+            auth.login(request,user)
+            return redirect('/')
+        else:
+            messages.info(request,'Warning! Invalid Credentials!')
+            return redirect('login')
+            
+    else:
+       return render(request, 'login.html') 
+    
         
         
     

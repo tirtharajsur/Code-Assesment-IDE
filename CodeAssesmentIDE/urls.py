@@ -26,5 +26,6 @@ urlpatterns = [
     path('',include('IDE.urls')),
     path('home',include('IDE.urls')),
     path('admin/', admin.site.urls),
+    path('Accounts/',include('Accounts.urls')),
     path('excecuteCode',executeCode)
 ]

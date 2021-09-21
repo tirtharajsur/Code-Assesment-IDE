@@ -25,6 +25,7 @@
 						<button class="tablinks" onclick="openCity(event, 'sign-up')" >Sign Up</button>
 					</div>
 					<div class="tab-inner">
+						<!-- <button class="tablinks" onclick="openCity(event, 'sign-in')" id="defaultOpen">Sign In</button> -->
 						<button class="tablinks" onclick="openCity(event, 'sign-in')" id="defaultOpen">Sign In</button>
 					</div>
 				</div>
@@ -122,11 +123,17 @@
 				</form>
 
 				<!-- Block for Alert Messages -->
-				<div>
-					{% for message in messages%}
+				{% for message in messages%}
+				{% if "Success" in message%}
+				<div class="alert alert-success" style="width: -90px;">
 					<h5>&nbsp;{{message}}</h5>
-					{% endfor %}
 				</div>
+				{% else %}
+				<div class="alert alert-warning" style="width: -90px;">
+					<h5>&nbsp;{{message}}</h5>
+				</div>
+				{% endif %}
+				{% endfor %}
 
 					<!-- <div class="alert alert-warning shadow" role="alert" style="border-left:#856404 5px solid;  border-radius: 0px">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -10,34 +10,96 @@
         <script src="{% static 'js/lib/ace.js' %}"></script>
         <script src="{% static 'js/lib/theme-monokai.js' %}"></script>
         <script src="{% static 'js/ide.js' %}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
 
-        <div class="container">
-        <!-- <div class="header"> Hey {{firstName}} , Welcome to the IDE </div> -->
-        <div class="header"> 
-            Code Assesments IDE 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <select id="languages" class="dropdown" onchange="changeLanguage()">
-                <option value="py"> Python </option>
-                <option value="c"> C </option>
-                <option value="cpp"> C++ </option>
-                <option value="java"> Java </option>
-                
-            </select>
-            
-        </div>
-        <div class = "problem">
-            <strong>Problem:&nbsp</strong>{{question}}
-        </div>
+    <header>
 
-        </div> 
-        <div class="editor" id="editor"></div>
-        <div class="button-container">
-            {%  csrf_token %}
-            <button class="btn" onclick="executeCode()" action="executeCode"> Run </button>
+      
+      
+        <!-- Background image -->
+        <div
+          id="intro-example"
+          class="p-5 text-center bg-image"
+          style="background-image: url({% static 'images/Homepage_background.jpg' %}); height: 1000px;"
+        >
+        <br><br><br>  
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white">
+                <br><br>
+                <h1 class="mb-3">{{question}}</h1>
+                <h5 class="mb-4">
+                  Select Language
+                </h5>
+                <select id="languages" class="btn btn-outline-light btn-lg m-2" onchange="changeLanguage()">
+                    <option value="py"> Python </option>
+                    <option value="c"> C </option>
+                    <option value="cpp"> C++ </option>
+                    <option value="java"> Java </option>
+                    
+                </select>
+              </div>  
+            </div >
+            <br>
+            <div class="container">
+                <div class="editor" id="editor"></div>
+            </div>
+            <br>
+            <div class="container">
+                      <div class="button-container">
+                        <!-- <button class="btn btn-outline-light btn-lg m-2" id="compileCode" onclick="ShowHideDiv(this)"> Compile </button> -->
+                        <button type="button" class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#outpulModal"> Compile</button>
+                        {%  csrf_token %}
+                        <button class="btn btn-outline-light btn-lg m-2" onclick="executeCode()" action="executeCode"> Submit </button>
+                    </div>
+                      <br><br>
+                      <!-- <div id="dvPassport" style="display: none; color:white">
+                        <h3>Output:</h3>
+                    </div> -->
+                            <!-- The Modal 1 -->
+        <div class="modal fade" id="outpulModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Output</h4>
+                  <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <i>Output of the program</i>
+                </div>
+                
+                <!-- Modal footer -->
+                <!-- <div class="modal-footer">
+                  <a href="/javaQuizPage" class="btn btn-danger">Start</a>   
+                </div> -->
+                
+              </div>
+            </div>
+          </div>
+                    </div>
+            </div>
+          </div>
         </div>
-    </div>
+        <!-- Background image -->
+      </header>
+
+      <script type="text/javascript">
+        function ShowHideDiv(compileCode) {
+            var dvPassport = document.getElementById("dvPassport");
+                dvPassport.style.display = "block";
+                //dvPassport.style.display = "none";
+        }
+    </script>
 
     </body>
     </html>

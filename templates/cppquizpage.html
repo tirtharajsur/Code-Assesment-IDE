@@ -19,108 +19,158 @@
     <title>C++ | Quiz</title>
 </head>
 <body>
-<div class = "container" style="background-color:rgb(248, 210, 210)">
-    <br><br>
-    <div class="container">
-        <h3>The programming language that has the ability to create new data types is called___.</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > Overloaded</label>
+<header>     
+    <!-- Background image -->
+    <div id="intro-example" class="p-5 text-center bg-image" style="background-image: url({% static 'images/Homepage_background.jpg' %}); height: max-content;">
+        <br><br><br>  
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+            <br><br>
+            <h1 class="mb-3">C++ | Quiz</h1>
+            <h5 class="mb-4">
+                Attempt all questions and submit
+            </h5>
+            </div>  
+        </div >
+        <br>
+        <div class="container" style="color:white; text-align: left">
+            <div class="container">
+                <h3>The programming language that has the ability to create new data types is called___.</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > Overloaded</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> Encapsulated</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > Reprehensible</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > Extensible</label>
+                    </div>
+                </form>
             </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> Encapsulated</label>
+            <br>
+            <div class="container">
+                <h3>Which of the following is the correct syntax to print the message in C++ language?</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > cout <<"Hello world!";</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> Cout << Hello world! ;</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > Out <<"Hello world!;</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> None of the above</label>
+                    </div>
+                </form>
             </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > Reprehensible</label>
+            <br>
+            <div class="container">
+                <h3>Which option is false about the final keyword?</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > A final method cannot be overridden in its subclasses.</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> A final class cannot be extended.</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > A final class cannot extend other classes.</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > A final method can be inherited.</label>
+                    </div>
+                </form>
             </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > Extensible</label>
+            <br>
+            <div class="container">
+                <h3>Which type of memory is used by an Array in C++ programming language?</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > Contiguous</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> None-contiguous</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > Both A and B</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > Not mentioned</label>
+                    </div>
+                </form>
             </div>
-        </form>
+            <br>
+            <div class="container">
+                <h3>In C++, for what purpose the "rank()" is used?</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > It returns the size of each dimension</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> It returns the maximum number of elements that can be stored in the array</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > It returns the dimension of the specified array</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > None of the above</label>
+                    </div>
+                </form>
+            </div> 
+            <br><br>
+            <div class="container" style="text-align: center">
+                <!-- <a href="/quiz" type="button" class="btn btn-outline-light btn-lg m-2">Submit</a> -->
+                <button type="button" class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#myModal_3"> Submit</button>
+                <a href="/quiz" class="btn btn-outline-light btn-lg m-2">Go Back</a>
+                
+            </div> 
+            <br><br>                    
+        </div>
+        <br><br>
+        </div>      
+        </div>
     </div>
-    <br>
-    <div class="container">
-        <h3>Which of the following is the correct syntax to print the message in C++ language?</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > cout <<"Hello world!";</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> Cout << Hello world! ;</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > Out <<"Hello world!;</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> None of the above</label>
-            </div>
-        </form>
+    <!-- Background image -->
+</header>
+
+<!-- The Modal 3 -->
+<div class="modal fade" id="myModal_3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">Are you sure to Submit</h4>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <i>Once submitted, no change can be made</i>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-danger" onclick="" data-dismiss="modal" onclick="cppQuizPage">Start 3</button> -->
+            <a href="/quiz" class="btn btn-danger">Submit</a>
+        </div>
+        
+        </div>
     </div>
-    <br>
-    <div class="container">
-        <h3>Which option is false about the final keyword?</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > A final method cannot be overridden in its subclasses.</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> A final class cannot be extended.</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > A final class cannot extend other classes.</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > A final method can be inherited.</label>
-            </div>
-        </form>
     </div>
-    <br>
-    <div class="container">
-        <h3>Which type of memory is used by an Array in C++ programming language?</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > Contiguous</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> None-contiguous</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > Both A and B</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > Not mentioned</label>
-            </div>
-        </form>
-    </div>
-    <br>
-    <div class="container">
-        <h3>In C++, for what purpose the "rank()" is used?</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > It returns the size of each dimension</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> It returns the maximum number of elements that can be stored in the array</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > It returns the dimension of the specified array</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > None of the above</label>
-            </div>
-        </form>
-    </div>
-    <br><br>
-    <div class="container" style="text-align: center">
-        <a href="/quiz" type="button" class="btn btn-primary">Submit</a>
-        <a href="/quiz" class="btn btn-danger">Go Back</a>
-    </div> 
-    <br><br>
-</div>
     
 </body>
+    
+    

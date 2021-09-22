@@ -19,109 +19,157 @@
     <title>Java | Quiz</title>
 </head>
 <body>
-<div class = "container" style="background-color:rgb(206, 250, 250)">
-    <br><br>
-    <div class="container">
-        <h3>Which of the following option leads to the portability and security of Java?</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > Bytecode is executed by JVM</label>
+<header>     
+    <!-- Background image -->
+    <div id="intro-example" class="p-5 text-center bg-image" style="background-image: url({% static 'images/Homepage_background.jpg' %}); height: max-content;">
+      <br><br><br>  
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <br><br>
+            <h1 class="mb-3">Java | Quiz</h1>
+            <h5 class="mb-4">
+              Attempt all questions and submit
+            </h5>
+          </div>  
+        </div >
+        <br>
+        <div class="container" style="color:white; text-align: left">
+            <div class="container">
+                <h3>Which of the following option leads to the portability and security of Java?</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > Bytecode is executed by JVM</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> The applet makes the Java code secure and portable</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > Use of exception handling</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > Dynamic binding between objects</label>
+                    </div>
+                </form>
             </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> The applet makes the Java code secure and portable</label>
+            <br>
+            <div class="container">
+                <h3>What will be the output of the following program?</h3>
+                <ol start="1" class="dp-j"><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Test&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span><span>&nbsp;count&nbsp;=&nbsp;</span><span class="number">1</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>&nbsp;(count&nbsp;&lt;=&nbsp;</span><span class="number">15</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(count&nbsp;%&nbsp;<span class="number">2</span><span>&nbsp;==&nbsp;</span><span class="number">1</span><span>&nbsp;?&nbsp;</span><span class="string">"***"</span><span>&nbsp;:&nbsp;</span><span class="string">"+++++"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;++count;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;end&nbsp;while</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;end&nbsp;main&nbsp;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li></ol>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > 15 times ***</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> 15 times +++++</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > 8 times *** and 7 times +++++</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> Both will print only once</label>
+                    </div>
+                </form>
             </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > Use of exception handling</label>
+            <br>
+            <div class="container">
+                <h3>Which option is false about the final keyword?</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > A final method cannot be overridden in its subclasses.</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> A final class cannot be extended.</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > A final class cannot extend other classes.</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > A final method can be inherited.</label>
+                    </div>
+                </form>
             </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > Dynamic binding between objects</label>
+            <br>
+            <div class="container">
+                <h3>Which of the following is a mutable class in java?</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > java.lang.String</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> java.lang.Byte</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > java.lang.Short</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > java.lang.StringBuilder</label>
+                    </div>
+                </form>
             </div>
-        </form>
+            <br>
+            <div class="container">
+                <h3>If a thread goes to sleep</h3>
+                <p><i>Select the Correct Option</i></p>
+                <form>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" > It releases all the locks it has.</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio"> It does not release any locks.</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > It releases half of its locks.</label>
+                    </div>
+                    <div class="radio disabled">
+                        <label><input type="radio" name="optradio" > It releases all of its lock except one.</label>
+                    </div>
+                </form>
+            </div>
+            <br><br>
+            <div class="container" style="text-align: center">
+                <!-- <a href="/quiz" type="button" class="btn btn-outline-light btn-lg m-2">Submit</a> -->
+                <button type="button" class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#myModal_3"> Submit</button>
+                <a href="/quiz" class="btn btn-outline-light btn-lg m-2">Go Back</a>
+                
+            </div> 
+            <br><br>                    
+        </div>
+        <br><br>
+      </div>      
+      </div>
     </div>
-    <br>
-    <div class="container">
-        <h3>What will be the output of the following program?</h3>
-        <ol start="1" class="dp-j"><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Test&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;main(String[]&nbsp;args)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span><span>&nbsp;count&nbsp;=&nbsp;</span><span class="number">1</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>&nbsp;(count&nbsp;&lt;=&nbsp;</span><span class="number">15</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(count&nbsp;%&nbsp;<span class="number">2</span><span>&nbsp;==&nbsp;</span><span class="number">1</span><span>&nbsp;?&nbsp;</span><span class="string">"***"</span><span>&nbsp;:&nbsp;</span><span class="string">"+++++"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;++count;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;end&nbsp;while</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;end&nbsp;main&nbsp;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li></ol>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > 15 times ***</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> 15 times +++++</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > 8 times *** and 7 times +++++</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> Both will print only once</label>
-            </div>
-        </form>
+    <!-- Background image -->
+</header>
+
+<!-- The Modal 3 -->
+<div class="modal fade" id="myModal_3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Are you sure to Submit</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <i>Once submitted, no change can be made</i>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-danger" onclick="" data-dismiss="modal" onclick="cppQuizPage">Start 3</button> -->
+          <a href="/quiz" class="btn btn-danger">Submit</a>
+        </div>
+        
+      </div>
     </div>
-    <br>
-    <div class="container">
-        <h3>Which option is false about the final keyword?</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > A final method cannot be overridden in its subclasses.</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> A final class cannot be extended.</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > A final class cannot extend other classes.</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > A final method can be inherited.</label>
-            </div>
-        </form>
-    </div>
-    <br>
-    <div class="container">
-        <h3>Which of the following is a mutable class in java?</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > java.lang.String</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> java.lang.Byte</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > java.lang.Short</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > java.lang.StringBuilder</label>
-            </div>
-        </form>
-    </div>
-    <br>
-    <div class="container">
-        <h3>If a thread goes to sleep</h3>
-        <p><i>Select the Correct Option</i></p>
-        <form>
-            <div class="radio">
-                <label><input type="radio" name="optradio" > It releases all the locks it has.</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="optradio"> It does not release any locks.</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > It releases half of its locks.</label>
-            </div>
-            <div class="radio disabled">
-                <label><input type="radio" name="optradio" > It releases all of its lock except one.</label>
-            </div>
-        </form>
-    </div>
-    <br><br>
-    <div class="container" style="text-align: center">
-        <a href="/quiz" type="button" class="btn btn-primary">Submit</a>
-        <a href="/quiz" class="btn btn-danger">Go Back</a>
-    </div> 
-    <br><br>
-</div>
+  </div>
     
 </body>

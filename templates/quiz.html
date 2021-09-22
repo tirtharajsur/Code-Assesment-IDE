@@ -18,149 +18,155 @@
 </head>
 <body>
 
-  
+<header>     
+  <!-- Background image -->
+  <div id="intro-example" class="p-5 text-center bg-image" style="background-image: url({% static 'images/Homepage_background.jpg' %}); height: 1000px;">
+    <br><br><br>  
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <br><br>
+          <h1 class="mb-3">Quiz Bootcamp</h1>
+          <h5 class="mb-4">
+            Select a language and get started
+          </h5>
+        </div>  
+      </div >
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="container">
+              <div class="card" style="width:400px">
+                <img class="card-img-top" src="{% static 'images/java_thumbnail.png' %}" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title">Java</h4>
+                  <p class="card-text"><i>“It is far easier to design a class to be thread-safe than to retrofit it for thread safety later.”</i></p>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_1"> Start Quiz</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+              <div class="container">
+                <div class="card" style="width:400px">
+                  <img class="card-img-top" src="{% static 'images/python_thumbnail.jpg' %}" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                    <h4 class="card-title">Python</h4>
+                    <p class="card-text"><i>“Do The Simplest Thing That Could Possibly Work”</i></p><br>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_2"> Start Quiz</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+           <div class="col-sm-4">
+              <div class="container">
+                <div class="card" style="width:400px">
+                  <img class="card-img-top" src="{% static 'images/cpp_thumbnail.jpg' %}" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                    <h4 class="card-title">C++</h4>
+                    <p class="card-text"><i>“Duplication is the primary enemy of a well-designed system.”</i></p>
+                    <!-- <a href="#" class="btn btn-primary stretched-link">Start Quiz</a> -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_3"> Start Quiz</button>
+                  </div>
+                </div>
+              </div>
+            </div>      
+            <br>
+        </div>                    
+      </div>
+      <br><br>
+    </div>      
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
 
-<div class="jumbotron jumbotron-fluid text-center" style="background-color: #ffff5f; ">
-  <h1>Quiz BootCamp</h1>
-  <p>Select a language and get started!</p> 
+<!-- The Modal 1 -->
+<div class="modal fade" id="myModal_1">
+<div class="modal-dialog">
+  <div class="modal-content">
+  
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Instructions</h4>
+      <button type="button" class="close" data-dismiss="modal">×</button>
+    </div>
+    
+    <!-- Modal body -->
+    <div class="modal-body">
+        Quiz Time limit is 10 minutes<br>
+        This Mock Test has 10 Questions<br>
+        Each Question is of 1 marks so total 10 marks<br>
+        Multiple Choice Questions with only ONE valid answer<br>
+    </div>
+    
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <!-- <button type="button" class="btn btn-danger" data-dismiss="modal"  action="javaQuizPage">Start 1</button> -->
+      <a href="/javaQuizPage" class="btn btn-danger">Start</a>   
+    </div>
+    
+  </div>
+</div>
 </div>
 
-
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="container">
-        <div class="card" style="width:400px">
-          <img class="card-img-top" src="{% static 'images/java_thumbnail.png' %}" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <h4 class="card-title">Java</h4>
-            <p class="card-text"><i>“It is far easier to design a class to be thread-safe than to retrofit it for thread safety later.”</i></p>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_1"> Start Quiz</button>
-          </div>
-        </div>
+<!-- The Modal 2 -->
+<div class="modal fade" id="myModal_2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Instructions</h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
       </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        Quiz Time limit is 10 minutes<br>
+        This Mock Test has 10 Questions<br>
+        Each Question is of 1 marks so total 10 marks<br>
+        Multiple Choice Questions with only ONE valid answer<br>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="pythonQuizPage">Start 2</button> -->
+        <a href="/pythonQuizPage" class="btn btn-danger">Start</a>
+      </div>
+      
     </div>
-    <div class="col-sm-4">
-        <div class="container">
-          <div class="card" style="width:400px">
-            <img class="card-img-top" src="{% static 'images/python_thumbnail.jpg' %}" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <h4 class="card-title">Python</h4>
-              <p class="card-text"><i>“Do The Simplest Thing That Could Possibly Work”</i></p><br>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_2"> Start Quiz</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="container">
-          <div class="card" style="width:400px">
-            <img class="card-img-top" src="{% static 'images/cpp_thumbnail.jpg' %}" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <h4 class="card-title">C++</h4>
-              <p class="card-text"><i>“Duplication is the primary enemy of a well-designed system.”</i></p>
-              <!-- <a href="#" class="btn btn-primary stretched-link">Start Quiz</a> -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_3"> Start Quiz</button>
-            </div>
-          </div>
-        </div>
-      </div>
+  </div>
+</div>
 
+<!-- The Modal 3 -->
+<div class="modal fade" id="myModal_3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Instructions</h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
       
-        <!-- The Modal 1 -->
-        <div class="modal fade" id="myModal_1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-            
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Instructions</h4>
-                <button type="button" class="close" data-dismiss="modal">×</button>
-              </div>
-              
-              <!-- Modal body -->
-              <div class="modal-body">
-                Instruction Line 1<br>
-                Instruction Line 2<br>
-                Instruction Line 3<br>
-                Instruction Line 4<br>
-                Instruction Line 5
-              </div>
-              
-              <!-- Modal footer -->
-              <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-danger" data-dismiss="modal"  action="javaQuizPage">Start 1</button> -->
-                <a href="/javaQuizPage" class="btn btn-danger">Start</a>   
-              </div>
-              
-            </div>
-          </div>
-        </div>
-
-        <!-- The Modal 2 -->
-        <div class="modal fade" id="myModal_2">
-            <div class="modal-dialog">
-              <div class="modal-content">
-              
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Instructions</h4>
-                  <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Instruction Line 1<br>
-                    Instruction Line 2<br>
-                    Instruction Line 3<br>
-                    Instruction Line 4<br>
-                    Instruction Line 5
-                </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="pythonQuizPage">Start 2</button> -->
-                  <a href="/pythonQuizPage" class="btn btn-danger">Start</a>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-          <!-- The Modal 3 -->
-        <div class="modal fade" id="myModal_3">
-            <div class="modal-dialog">
-              <div class="modal-content">
-              
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Instructions</h4>
-                  <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                Instruction Line 1<br>
-                Instruction Line 2<br>
-                Instruction Line 3<br>
-                Instruction Line 4<br>
-                Instruction Line 5
-                </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-danger" onclick="" data-dismiss="modal" onclick="cppQuizPage">Start 3</button> -->
-                  <a href="/cppQuizPage" class="btn btn-danger">Start</a>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        
+      <!-- Modal body -->
+      <div class="modal-body">
+        Quiz Time limit is 10 minutes<br>
+        This Mock Test has 10 Questions<br>
+        Each Question is of 1 marks so total 10 marks<br>
+        Multiple Choice Questions with only ONE valid answer<br>
       </div>
-
       
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-danger" onclick="" data-dismiss="modal" onclick="cppQuizPage">Start 3</button> -->
+        <a href="/cppQuizPage" class="btn btn-danger">Start</a>
+      </div>
+      
+    </div>
+  </div>
 </div>
 
 </body>

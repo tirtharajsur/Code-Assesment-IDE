@@ -44,19 +44,23 @@
     border: 1px solid gray;
 }
 
-#editor { height: 500px; }
+#editor { 
+	height: 500px;
+	background-color: white;
+
+}
 
 .button-container {
     text-align: center;
     padding: 4px;
 }
 
-.btn {
+/* .btn {
     background: #eb823d;
     color: white;
     padding: 8px;
     border: 0;
-}
+} */
 
 .output {
         padding: 4px;
@@ -76,9 +80,12 @@ body {
 	width: 100%;
     width: 100%;
 	margin:  0 auto;
-	background-image: -moz-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
+	/* background-image: -moz-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
     background-image: -webkit-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
-    background-image: -ms-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%);
+    background-image: -ms-linear-gradient( 136deg, rgb(0,158,253) 0%, rgb(42,245,152) 100%); */
+	background-repeat: no-repeat;
+	background-attachment: fixed;  
+	background-size: cover;
 	display: flex;
 	display: -webkit-flex;
 	justify-content: center;
@@ -123,7 +130,7 @@ body {
     padding: 30px 0;
 	position: relative;
 	width: 100%;
-	background: #3d5983;
+	/* background: #3d5983; */
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
 }
@@ -138,9 +145,12 @@ body {
     -moz-justify-content: space-between;
     -webkit-justify-content: space-between;
 }
+
+
 .form-v8-content .tab .tab-inner {
 	width: 100%;
 }
+
 .form-v8-content .tab .tablinks {
 	background: transparent;
 	border: none;
@@ -321,3 +331,16 @@ body {
 	}
 }
  /* CSS for login page */
+
+
+ #intro-example {
+	height: 400px;
+  }
+
+  /* Height for devices larger than 992px */
+  @media (min-width: 992px) {
+	#intro-example {
+	  height: 600px;
+	}
+  }
+   /* CSS for IDE Page */

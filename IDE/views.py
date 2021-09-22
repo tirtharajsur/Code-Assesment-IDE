@@ -10,6 +10,18 @@ from .models import Questions
 def home(request):
     return render(request, 'homepage.html')
 
+def quiz(request):
+    return render(request, 'quiz.html')
+
+def javaQuiz(request):
+    return render(request, 'javaquizpage.html')
+
+def pythonQuiz(request):
+    return render(request, 'pythonquizpage.html')
+
+def cppQuiz(request):
+    return render(request, 'cppquizpage.html')
+
 def enterIDE(request):
     question = ""
     firstName=""

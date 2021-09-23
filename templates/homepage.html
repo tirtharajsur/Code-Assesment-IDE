@@ -53,6 +53,18 @@
           <h5 class="mb-4">
             Welcome the Code Assesment Web Portal
           </h5>
+          {% if user.is_authenticated %}
+          <h5 class="mb-4">
+            Welcome {{user.first_name}}
+          </h5>
+          <a
+          class="btn btn-outline-light btn-lg m-2"
+          href="Accounts/logout"
+          role="button"
+          rel="nofollow"
+          target="_blank"
+          >Logout</a>
+          {%else%}
           <a
             class="btn btn-outline-light btn-lg m-2"
             href="Accounts/register"
@@ -68,6 +80,7 @@
             role="button"
             >Login</a
           >
+          {% endif %}
           <a
           class="btn btn-outline-light btn-lg m-2"
           href="/quiz"

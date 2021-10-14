@@ -5,22 +5,12 @@ import string
 import random
 import os
 from .models import Questions
+from django.contrib.auth.models import User,auth 
 
 # Create your views here.
 def home(request):
     return render(request, 'homepage.html')
 
-def quiz(request):
-    return render(request, 'quiz.html')
-
-def javaQuiz(request):
-    return render(request, 'javaquizpage.html')
-
-def pythonQuiz(request):
-    return render(request, 'pythonquizpage.html')
-
-def cppQuiz(request):
-    return render(request, 'cppquizpage.html')
 
 def enterIDE(request):
     question = ""
@@ -37,6 +27,7 @@ def enterIDE(request):
             difficulty_level='EASY').first()
         
     return render(request, 'ide.html', {'firstName': firstName, 'question': question})
+
 
 def executeCode(request):
     output = ""

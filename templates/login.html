@@ -1,162 +1,121 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Code Assesments IDE</title>
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Font-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/sourcesanspro-font.css' %}">
-	<!-- Main Style Css -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
-	 <!-- Bootstrap CSS -->
-	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sourcesanspro-font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Welcome to the Code Assesments</title>
+</head>
+<body>
+  
 
-	</head>
-<body class="form-v8">
-	<div class="page-content" style="background-image: url('{% static 'images/Homepage_background.jpg' %}');background-repeat: no-repeat;
-	background-attachment: fixed;  
-	background-size: cover;">
-		<div class="form-v8-content">
-			<div class="form-left">
-				<img src="{% static 'images/tileimage.png' %}" alt="form" style="min-width:100%;min-height:100%;">
-			</div>
-			<div class="form-right">
-				<div class="tab">
-					<div class="tab-inner">
-						<button class="tablinks" onclick="openCity(event, 'sign-up')" >Sign Up</button>
-					</div>
-					<div class="tab-inner">
-						<!-- <button class="tablinks" onclick="openCity(event, 'sign-in')" id="defaultOpen">Sign In</button> -->
-						<button class="tablinks" onclick="openCity(event, 'sign-in')" id="defaultOpen">Sign In</button>
-					</div>
-				</div>
-				<form class="form-detail" action="register" method="post">
-					{% csrf_token %}
-					<div class="tabcontent" id="sign-up">
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="first_name" id="first_name" class="input-text" required>
-								<span class="label">First Name</span>
-		  						<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="last_name" id="last_name" class="input-text" required>
-								<span class="label">Last Name</span>
-		  						<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="username" id="username" class="input-text" required>
-								<span class="label">Username</span>
-		  						<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="email" name="email" id="email" class="input-text" required>
-								<span class="label">E-Mail</span>
-		  						<span class="border"></span>
-							</label>
-						</div>
-						<!-- <div class="form-row">
-							<label class="form-row-inner">
-									<select class="form-select" style="background-color:#3d5983;color:white" id="role" name="role" required>
-										<option selected>Role</option>
-										<option value="softwareEngineer">Software Engineer</option>
-										<option value="seniorSoftwareEngineer">Senior Software Engineer</option>
-										<option value="associateConsultant">Associate Consultant</option>
-										<option value="consultant">Consultant</option>
-										<option value="seniorConsultant">Senior Consultant</option>
-									  </select>
-								<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-							</label>
-						</div> -->
+  
+<header>
+  <!-- Background image -->
+
+  
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url({% static 'images/Base_Background.jpg' %}); height: max-content;"
+  >
+        
+        <div class="navbar">
+          <a
+          class="btn btn-outline-dark btn-lg m-2"
+          href="../"
+          role="button"
+          rel="nofollow"
+          target="_blank"
+          >Home</a
+          >
+        </div>
+        <br><br><br>
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+              <br><br>
+              <h1 class="mb-3" style="text-align:left;">Sign In</h1>
+              <form  action="login" method="post" style = "width: 700px;">
+                {% csrf_token %}
+                <div class="form-group row">
+                  <!-- <label for="usernameLogin" class="col-sm-2 col-form-label">Username</label> -->
+                  <div class="col-sm-10">
+                    <input type="text" name="usernameLogin" id="usernameLogin" class="form-control" required placeholder="Username">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <!-- <label for="passwordLogin" class="col-sm-2 col-form-label">Last Name</label> -->
+                  <div class="col-sm-10">
+                    <input type="password" name="passwordLogin" id="passwordLogin" class="form-control" required placeholder="Password">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <div class="col-sm-10"></div>
+                    <input type="submit" name="login" class="btn btn-outline-light btn-lg m-2 rounded-pill" style="width: 110px; position: center;" value="Sign In">
+                  </div>
+                </div>
+                <br>
+              </form>
+            </div>
+          </div>
+		      <!-- Block for Alert Messages -->
+			  {% for message in messages%}
+			  {% if "Success" in message%}
+			  <!-- <button type="button" class="btn btn-outline-dark btn-lg m-2" data-toggle="modal" data-target="#logout_modal"> Logout</button> -->
+			  <div class="alert alert-success" style="width: -90px;">
+				<h5>&nbsp;{{message}}</h5>
+			  </div>
+			  {% else %}
+			  <div class="alert alert-success" style="width: -90px;">
+				<h5>&nbsp;{{message}}</h5>
+			  </div>
+			<!-- The Modal 3 -->
+			<div style="width: -90px;" data-toggle="modal" data-target="#logout_modal"></div>
+			<div class="modal fade" id="logout_modal">
+				<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
 						
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="password" id="password" class="input-text" required>
-								<span class="label">Password</span>
-								<span class="border"></span>
-							</label>
+							<!-- Modal Header -->
+							<div class="modal-header">
+								<h4 class="modal-title">Congratulations</h4>
+								<button type="button" class="close" data-dismiss="modal">×</button>
+							</div>
+							<!-- Modal body -->
+							<div class="modal-body">
+							You have succesfully registered yourself.
+							</div>
+							<!-- Modal footer -->
+							<!-- <div class="modal-footer">
+								<a
+									class="btn btn-danger"
+									href="../Accounts/logout"
+									>Log Out
+								</a>
+							</div>     -->
 						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="confirm_password" id="confirm_password" class="input-text" required>
-								<span class="label">Comfirm Password</span>
-								<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row-last">
-							<input type="submit" name="register" class="register" value="Register">
-						</div>
-					</div>
-				</form>
-
-
-				<form class="form-detail" action="login" method="post">
-					{% csrf_token %}
-					<div class="tabcontent" id="sign-in">
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="text" name="usernameLogin" id="usernameLogin" class="input-text" required>
-								<span class="label">Username</span>
-		  						<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row">
-							<label class="form-row-inner">
-								<input type="password" name="passwordLogin" id="passwordLogin" class="input-text" required>
-								<span class="label">Password</span>
-								<span class="border"></span>
-							</label>
-						</div>
-						<div class="form-row-last">
-							<input type="submit" name="register" class="register" value="Sign In">
-						</div>
-					</div>
-				</form>
-
-				<!-- Block for Alert Messages -->
-				{% for message in messages%}
-				{% if "Success" in message%}
-				<div class="alert alert-success" style="width: -90px;">
-					<h5>&nbsp;{{message}}</h5>
 				</div>
-				{% else %}
-				<div class="alert alert-warning" style="width: -90px;">
-					<h5>&nbsp;{{message}}</h5>
-				</div>
-				{% endif %}
-				{% endfor %}
 
 			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		function openCity(evt, cityName) {
-		    var i, tabcontent, tablinks;
-		    tabcontent = document.getElementsByClassName("tabcontent");
-		    for (i = 0; i < tabcontent.length; i++) {
-		        tabcontent[i].style.display = "none";
-		    }
-		    tablinks = document.getElementsByClassName("tablinks");
-		    for (i = 0; i < tablinks.length; i++) {
-		        tablinks[i].className = tablinks[i].className.replace(" active", "");
-		    }
-		    document.getElementById(cityName).style.display = "block";
-		    evt.currentTarget.className += " active";
-		}
 
-		// Get the element with id="defaultOpen" and click on it
-		document.getElementById("defaultOpen").click();
-	</script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+			  {% endif %}
+			  {% endfor %}
+        </div>
+    </div>
+  <!-- Background image -->
+</header>
+   
+</body>
 </html>
+
+
+
+

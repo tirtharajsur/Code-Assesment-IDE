@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sourcesanspro-font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Welcome to the Code Assesments</title>
+</head>
+<body>
+  
+
+  
+<header>
+  <!-- Background image -->
+  
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url({% static 'images/Base_Background.jpg' %}); height: 1000px;"
+  >
+  <div class="navbar">
+    <a
+    class="btn btn-outline-dark btn-lg m-2"
+    href="../"
+    role="button"
+    rel="nofollow"
+    target="_blank"
+    >Home</a
+    >
+  </div>
+        <br><br><br>
+    
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+              <br><br>
+              <h1 class="mb-3" style="text-align:left;">Sign Up</h1>
+              <form  action="register" method="post" style = "width: 700px;">
+                {% csrf_token %}
+                <div class="form-group row">
+                  <!-- <label for="first_name" class="col-sm-2 col-form-label">First Name</label> -->
+                  <div class="col-sm-10">
+                    <input type="text" name="first_name" id="first_name" class="form-control" required placeholder="First Name">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <!-- <label for="last_name" class="col-sm-2 col-form-label">Last Name</label> -->
+                  <div class="col-sm-10">
+                    <input type="text" name="last_name" id="last_name" class="form-control" required placeholder="Last name">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <!-- <label for="username" class="col-sm-2 col-form-label">Username</label> -->
+                  <div class="col-sm-10">
+                    <input type="text" name="username" id="username" class="form-control" required placeholder="Username">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <!-- <label for="email" class="col-sm-2 col-form-label">Email</label> -->
+                  <div class="col-sm-10">
+                    <input type="email" name="email" id="email" class="form-control" required placeholder="Email">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <!-- <label for="password" class="col-sm-2 col-form-label">Password</label> -->
+                  <div class="col-sm-10">
+                    <input type="password" name="password" id="password" class="form-control" required placeholder="Enter your password">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <!-- <label for="confirm_password" class="col-sm-2 col-form-label">Confirm Password</label> -->
+                  <div class="col-sm-10">
+                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" required placeholder="Retype password">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                  <div class="col-sm-10"></div>
+                    <input type="submit" name="register" class="btn btn-outline-light btn-lg m-2 rounded-pill" style="width: 110px; position: center;" value="Register">
+                  </div>
+                </div>
+                <br>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  <!-- Background image -->
+</header>
+<!-- The Modal 3 -->
+<div class="modal fade" id="logout_modal">
+    <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Are you sure to log out?</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <a
+                        class="btn btn-danger"
+                        href="../Accounts/logout"
+                        >Log Out
+                    </a>
+                </div>    
+            </div>
+    </div>
+    <!-- Block for Alert Messages -->
+    {% for message in messages%}
+    {% if "Success" in message%}
+    <div class="alert alert-success" style="width: -90px;">
+      <h5>&nbsp;{{message}}</h5>
+    </div>
+    {% else %}
+    <div class="alert alert-warning" style="width: -90px;">
+      <h5>&nbsp;{{message}}</h5>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+   
+</body>
+</html>
+
+
+
+

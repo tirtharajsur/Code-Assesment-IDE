@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sourcesanspro-font.css' %}">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Welcome to the Code Assesments</title>
+</head>
+<body>
+  
+
+  
+<header>
+  <!-- Background image -->
+  
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url({% static 'images/Base_Background.jpg' %}); height: max-content;"
+  >
+        <div class="navbar">
+                <a
+                class="btn btn-outline-dark btn-lg m-2"
+                href="../"
+                role="button"
+                rel="nofollow"
+                target="_blank"
+                >Home</a
+                >
+                 {% if user.is_authenticated %}
+                <h1 class="mb-3">Welcome {{user.first_name}}</h1>
+                <button type="button" class="btn btn-outline-dark btn-lg m-2" data-toggle="modal" data-target="#logout_modal"> Logout</button>
+                {%else%}
+                <a
+                    class="btn btn-outline-dark btn-lg m-2"
+                    href="../Accounts/register"
+                    role="button"
+                    rel="nofollow"
+                    target="_blank"
+                    >Register</a
+                >
+                <a
+                    class="btn btn-outline-dark btn-lg m-2"
+                    href="../Accounts/login"
+                    target="_blank"
+                    role="button"
+                    >Login</a
+                >
+                {% endif %}
+        </div>
+        <br> 
+    
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+        {% block content %}
+
+        {% endblock %}
+        </div>
+    </div>
+  <!-- Background image -->
+</header>
+<!-- The Modal 3 -->
+<div class="modal fade" id="logout_modal">
+    <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Are you sure to log out?</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <a
+                        class="btn btn-danger"
+                        href="../Accounts/logout"
+                        >Log Out
+                    </a>
+                </div>    
+            </div>
+    </div>
+</div>
+   
+</body>
+</html>

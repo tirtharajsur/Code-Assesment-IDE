@@ -20,12 +20,14 @@ from django.urls.conf import include
 import IDE
 from IDE import urls
 from IDE.views import *
-
+from Quiz import urls
+from Quiz.views import *
 
 urlpatterns = [
     path('',include('IDE.urls')),
     path('home',include('IDE.urls')),
     path('admin/', admin.site.urls),
     path('Accounts/',include('Accounts.urls')),
-    path('excecuteCode',executeCode)
+    path('excecuteCode',executeCode),
+    path('Quiz/',include('Quiz.urls')),
 ]

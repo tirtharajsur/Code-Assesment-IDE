@@ -55,4 +55,6 @@ def executeCode(request):
     # f.write(code)
     # f.close()
 # render(request, 'ide.html', response)
-    return JsonResponse({'success': response.get("stdout"), 'errorMsg': response.get("compile_output") if response.get("stderr") is None else response.get("stderr")})
+    return JsonResponse({
+        'success': response.get("stdout"), 
+        'errorMsg': response.get("compile_output") if response.get("stderr") is None else response.get("stderr")})

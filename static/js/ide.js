@@ -50,6 +50,7 @@ function ComplileCode() {
         console.log(data.errorMsg);
         $("#Output").text(data.errorMsg);
         $(".testOutput").text(data.errorMsg);
+        $("#outpulModal").modal("show");
       }
       // show response from the php script.
     },

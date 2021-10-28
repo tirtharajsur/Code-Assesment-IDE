@@ -40,10 +40,12 @@ def executeCode(request):
     print(request)
     language = request.POST.get('language')
     code = str(request.POST.get('code')).replace("\\r\\n", "")
+    inputText = str(request.POST.get('inputText')).replace("\\r\\n", "")
     print("language:            "+language)
     print("Code:            "+code)
+    print("input:            "+inputText)
 
-    response = submitRequest(language, code)
+    response = submitRequest(language, code, inputText)
     print(response)
     print(response.keys())
     # randomName = ''.join(random.choices(string.ascii_lowercase, k=7))
@@ -56,5 +58,5 @@ def executeCode(request):
     # f.close()
 # render(request, 'ide.html', response)
     return JsonResponse({
-        'success': response.get("stdout"), 
+        'success': response.get("stdout"),
         'errorMsg': response.get("compile_output") if response.get("stderr") is None else response.get("stderr")})

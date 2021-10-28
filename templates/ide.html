@@ -22,30 +22,61 @@
 </head>
 
 <body>
+  <div class="content py-3 mx-5">
+    <div class="container">
 
-  <div class="d-flex justify-content-center align-items-center h-100">
-    <div class="text-white">
-      <br><br>
-      <h1 class="mb-3">{{first_name}}</h1>
-      <h1 class="mb-3">{{question}}</h1>
-      <h5 class="mb-4">
-        Select Language
-      </h5>
-      <select id="languages" class="btn btn-outline-light btn-lg m-2" onchange="changeLanguage()">
-        <option value="71"> Python </option>
-        <option value="75"> C </option>
-        <option value="52"> C++ </option>
-        <option value="62"> Java </option>
-
-      </select>
+      <!-- Heading -->
+      <div class="heading row my-3">
+        <div class="col-md-8">
+          <div class="text-white">
+            <h1 class="my-3">{{first_name}}</h1>
+            <h1 class="float-start">Question : {{question}}</h1>
+          </div>
+        </div>
+        <div class="col-md-4 text-white">
+          <div class="form-group row my-3">
+            <label for="languages" class="col-sm-6 col-form-label">Select Language :</label>
+            <div class="col-sm-6">
+              <select id="languages" class="btn btn-outline-light form-control-plaintext" onchange="changeLanguage()">
+                <option value="71">Python</option>
+                <option value="75">C</option>
+                <option value="52">C++</option>
+                <option value="62">Java</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
     </div>
-  </div>
-  <br>
-  <div class="container">
-    <div class="editor" id="editor"></div>
-  </div>
-  <br>
-  <div class="container">
+    <!-- //Heading -->
+
+    <!-- editor_section -->
+    <div class="editor_section mt-5">
+      <div class="editor" id="editor"></div>
+    </div>
+    <!-- //editor_section -->
+
+    <!-- input-output Section -->
+    <div class="input-output my-5 text-white">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating">
+            <textarea class="form-control" id="inputText" style="height: 120px"></textarea>
+            <label for="inputText" class="text-dark">Input</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <textarea class="form-control testOutput" id="output" style="height: 120px"></textarea>
+            <label for="output" class="text-dark">Output</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //input-output Section -->
+
+    <!-- button-container -->
     <div class="button-container">
       <!-- <button class="btn btn-outline-light btn-lg m-2" id="compileCode" onclick="ShowHideDiv(this)"> Compile </button> -->
       <button type="button" class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#outpulModal"
@@ -54,7 +85,8 @@
       {%  csrf_token %}
       <button class="btn btn-outline-light btn-lg m-2" onclick="executeCode()" action="executeCode"> Submit </button>
     </div>
-    <br><br>
+    <!-- //button-container -->
+
     <div class="modal fade" id="outpulModal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -80,11 +112,6 @@
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  <div>
-    <h1>Output :</h1>
-    <div class="testOutput"></div>
   </div>
 
   <script type="text/javascript">

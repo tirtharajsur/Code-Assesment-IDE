@@ -2,13 +2,13 @@ import http.client
 import json
 
 
-def submitRequest(langId, code):
+def submitRequest(langId, code, inputText):
     conn = http.client.HTTPSConnection("judge0-ce.p.rapidapi.com")
 
     payload = {
         "language_id": langId,
         "source_code": code,
-        "stdin": ""
+        "stdin": inputText
     }
 
     headers = {

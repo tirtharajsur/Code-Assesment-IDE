@@ -42,9 +42,15 @@ function ComplileCode() {
       csrfViewMiddleware: $("input[name=csrfmiddlewaretoken").val(),
     },
     success: function (data) {
-      console.log(data);
-      $("#Output").html(data);
-      $(".testOutput").html(data);
+      if (!data.errorMsg) {
+        console.log(data.success);
+        $("#Output").text(data.success);
+        $(".testOutput").text(data.success);
+      } else {
+        console.log(data.errorMsg);
+        $("#Output").text(data.errorMsg);
+        $(".testOutput").text(data.errorMsg);
+      }
       // show response from the php script.
     },
   });

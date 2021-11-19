@@ -92,4 +92,15 @@
 </div>
    
 </body>
+<!-- Javascript code to prevent cut/copy/paste/rightClick in the website -->
+<script type = "text/javascript">
+$(document).ready(function() {
+    $('body').bind('cut copy paste',function(e){
+        e.preventDefault();
+    })
+    $('body').bind('contextmenu',function(e){
+        return false;
+    })
+})
+</script>
 </html>

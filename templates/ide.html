@@ -2,127 +2,185 @@
 {% load static %}
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Code Assesments - IDE</title>
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="{% static 'js/lib/ace.js' %}"></script>
-  <script src="{% static 'js/lib/theme-tomorrow.js' %}"></script>
-  <script src="{% static 'js/ide.js' %}"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
+        <head>
+            <meta charset="UTF-8">
+            <title>Code Assesments - IDE</title>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="{% static 'js/lib/ace.js' %}"></script>
+            <script src="{% static 'js/lib/theme-tomorrow.js' %}"></script>
+            <script src="{% static 'js/ide.js' %}"></script>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </head>
 
-<body>
-  <div class="content py-3 mx-5">
-    <div class="container">
+        <body>
+            <div class="content py-3 mx-5">
+                <div
+                    class="container">
 
-      <!-- Heading -->
-      <div class="heading row my-3">
-        <div class="col-md-8">
-          <div class="text-white">
-            <h1 class="my-3">{{first_name}}</h1>
-            <h1 class="float-start">Question : {{question}}</h1>
-          </div>
-        </div>
-        <div class="col-md-4 text-white">
-          <div class="form-group row my-3">
-            <label for="languages" class="col-sm-6 col-form-label">Select Language :</label>
-            <div class="col-sm-6">
-              <select id="languages" class="btn btn-outline-light form-control-plaintext" onchange="changeLanguage()">
-                <option value="71">Python</option>
-                <option value="75">C</option>
-                <option value="52">C++</option>
-                <option value="62">Java</option>
-              </select>
+                    <!-- Heading -->
+                    <div class="heading row my-3">
+                        <div class="col-md-8">
+                            <div class="text-white">
+                                <h1 class="my-3">{{ first_name }}</h1>
+                                <h1 class="float-start">Question :
+                                    {{ question }}</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-white">
+                            <div class="form-group row my-3">
+                                <label for="languages" class="col-sm-6 col-form-label">Select Language :</label>
+                                <div class="col-sm-6">
+                                    <select id="languages" class="btn btn-outline-light form-control-plaintext" onchange="changeLanguage()">
+                                        <option value="71">Python</option>
+                                        <option value="75">C</option>
+                                        <option value="52">C++</option>
+                                        <option value="62">Java</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- //Heading -->
+
+                <!-- editor_section -->
+                <div class="editor_section mt-5">
+                    <div class="editor" id="editor"></div>
+                </div>
+                <!-- //editor_section -->
+
+                <!-- input-output Section -->
+                <div class="input-output my-5 text-white">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="inputText" style="height: 120px"></textarea>
+                                <label for="inputText" class="text-dark">Input</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <textarea class="form-control testOutput" id="output" style="height: 120px"></textarea>
+                                <label for="output" class="text-dark">Output</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- //input-output Section -->
+
+                <!-- Displaying loader while loading output -->
+                <div id="loader" class="spinner-border text-muted"></div>
+                <!-- Displaying loader while loading output -->
+
+                <!-- button-container -->
+                <div
+                    class="button-container">
+                    <!-- <button class="btn btn-outline-light btn-lg m-2" id="compileCode" onclick="ShowHideDiv(this)"> Compile </button> -->
+                    <button type="button" id="compileCode" class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#outpulModal" onclick="ComplileCode()">
+                        Compile</button>
+                    {% csrf_token %}
+                    <button class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#submitModal">
+                        Submit
+                    </button>
+                    <!-- <button id="submitCode" class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#submitModal" onclick="executeCode()" action="executeCode">
+                        Submit
+                    </button> -->
+                </div>
+                <!-- //button-container -->
+
+                <!-- <div class="modal fade" id="outpulModal">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                
+                                
+                                          <div class="modal-header">
+                                            <h4 class="modal-title">Output</h4>
+                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                          </div>
+                                
+                                
+                                          <div class="modal-body">
+                                            <i>Output of the program</i>
+                                            <div id="Output">
+                                            </div>
+                                          </div>
+                                
+                                        </div>
+                                      </div>
+                                    </div> -->
+
+                <div class="modal fade" id="submitModal">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+
+                            <div class="modal-header">
+                                <h4 class="modal-title">Are you sure to submit the code?</h4>
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+
+
+                            <div class="modal-body">
+                                <i>Once submitted, no changes can be made</i>
+                                <!-- <div id="Output"></div> -->
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <!-- <a class="btn btn-danger" href="../Accounts/logout">Log Out
+                                </a> -->
+                                <button id="submitCode" class="btn btn-success" onclick="executeCode()" action="executeCode">
+                                    Submit
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    document.getElementById("submitCode").onclick = function () {
+                        location.href = "../home";
+                    };
+                </script>
+
+
             </div>
-          </div>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    <!-- //Heading -->
 
-    <!-- editor_section -->
-    <div class="editor_section mt-5">
-      <div class="editor" id="editor"></div>
-    </div>
-    <!-- //editor_section -->
+            <script type="text/javascript">
+                function ShowHideDiv(compileCode) {
+                    var dvPassport = document.getElementById("dvPassport");
+                    dvPassport.style.display = "block";
+                    // dvPassport.style.display = "none";
+                }
 
-    <!-- input-output Section -->
-    <div class="input-output my-5 text-white">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-floating">
-            <textarea class="form-control" id="inputText" style="height: 120px"></textarea>
-            <label for="inputText" class="text-dark">Input</label>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-floating">
-            <textarea class="form-control testOutput" id="output" style="height: 120px"></textarea>
-            <label for="output" class="text-dark">Output</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- //input-output Section -->
+                $document.ready(function () {
+                    $("#compileCode").on("click", function () {
+                        $.ajax({
+                            beforeSend: function () {
+                                $("#loader").show();
+                            },
+                            complete: function () {
+                                $("#loader").hide();
+                            },
+                            success: function () {},
+                            error: function () {}
+                        });
+                    });
+                });
+            </script>
 
-    <!-- button-container -->
-    <div class="button-container">
-      <!-- <button class="btn btn-outline-light btn-lg m-2" id="compileCode" onclick="ShowHideDiv(this)"> Compile </button> -->
-      <button type="button" class="btn btn-outline-light btn-lg m-2" data-toggle="modal" data-target="#outpulModal"
-        onclick="ComplileCode()">
-        Compile</button>
-      {%  csrf_token %}
-      <button class="btn btn-outline-light btn-lg m-2" onclick="executeCode()" action="executeCode"> Submit </button>
-    </div>
-    <!-- //button-container -->
 
-    <div class="modal fade" id="outpulModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Output</h4>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <i>Output of the program</i>
-            <div id="Output">
-            </div>
-          </div>
-
-          <!-- Modal footer -->
-          <!-- <div class="modal-footer">
-                  <a href="/javaQuizPage" class="btn btn-danger">Start</a>   
-                </div> -->
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script type="text/javascript">
-    function ShowHideDiv(compileCode) {
-      var dvPassport = document.getElementById("dvPassport");
-      dvPassport.style.display = "block";
-      //dvPassport.style.display = "none";
-    }
-  </script>
-
-  <!-- </body>
-    </html> -->
-
-  {% endblock %}
+        {% endblock %}
+    </body>
+</html>
